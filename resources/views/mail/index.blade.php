@@ -31,7 +31,7 @@
                                               <h4 class="modal-title">Compose</h4>
                                           </div>
                                           <div class="modal-body">
-                                              <form action="/send/mail" method="POST" role="form" class="form-horizontal">
+                                              <form action="/send/mail" method="POST" role="form" enctype="multipart/form-data" class="form-horizontal">
                                                 @csrf
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">To</label>
@@ -47,6 +47,7 @@
                                                           <input name="subject" type="text" placeholder="" id="inputPassword1" class="form-control">
                                                       </div>
                                                   </div>
+                                                  
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Message</label>
                                                       <div class="col-lg-10">
@@ -57,9 +58,9 @@
                                                   <div class="form-group">
                                                       <div class="col-lg-offset-2 col-lg-10">
                                                           <span class="btn green fileinput-button">
-                                                            <i class="fa fa-plus fa fa-white"></i>
+                                                            <i class="fas fa-paperclip"></i>
                                                             <span>Attachment</span>
-                                                            <input type="file" name="files[]" multiple="">
+                                                            {!! Form::file('a_file') !!}
                                                           </span>
                                                           <button class="btn btn-send" type="submit">Send</button>
                                                       </div>
@@ -162,6 +163,7 @@
                                         
                                         <?php  foreach($mess_inbox as $inbox):?>
                                         @if($unseen_message === $inbox->body)
+                                        {{-- @if($inbox) --}}
                                   <tr class="unread">
                                       <td class="inbox-small-cells">
                                           <input type="checkbox" class="mail-checkbox">

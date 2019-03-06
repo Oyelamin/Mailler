@@ -39,10 +39,11 @@ class Imap {
         $this->imapStream = $connection;
         return true;
     }
+    
     public function getMessages($type = 'text') {
         $this->attachments_dir = rtrim($this->attachments_dir, '/');
         $stream = $this->imapStream;
-        $emails = imap_search($stream, 'ALL');
+        $emails = imap_search($stream, 'UNSEEN');
         $messages = array();
         if ($emails) {
             $this->emails = $emails;
@@ -57,6 +58,7 @@ class Imap {
 			"data" => array_reverse($messages)
 		);
     }
+    
     private function replaceInlineImagesSrcWithRealPath($message)
     {
         /*

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/bulma.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/send.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('css/main.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('css/temp.css')}}">
     <script src="{{asset('js/netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')}}"></script>

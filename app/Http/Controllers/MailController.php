@@ -31,9 +31,11 @@ class MailController extends Controller
        );
        //Unseen Messages
        $connection2= $email2->connect(
+
         '{imap.gmail.com:993/imap/ssl}INBOX',   //Host Name
         'blessingcodephp@gmail.com',    //Username
         'Oyelamin'  //Password
+
        );
        //All Messages
        if($connection){
@@ -84,6 +86,9 @@ class MailController extends Controller
             return view('mail.index')->with('mess_inbox',$mess_inbox)->with('unseen_message',$unseen_message);
 
         }
+    // $mess_inbox = DB::table('inboxes')->orderBy('id','desc')->groupBy('date')->paginate(30);
+    // return view('mail.index')->with('mess_inbox',$mess_inbox);
+
     }
 
     /**

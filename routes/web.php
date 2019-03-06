@@ -20,3 +20,5 @@ Route::resource('mail/unseen','UnseenMessgController');
 Route::resource('mail','MailController');
 Route::post('/send/mail','SendMailController@index');
 Route::post('mail/reply/{inbox}','ReplyController@index');
+// Route::get('/sent','SentMessagesController@index');
+Route::get('/check','CheckController@index');
