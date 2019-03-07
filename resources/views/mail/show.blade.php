@@ -19,7 +19,7 @@
                               </a>
                           </div>
                           <div class="inbox-body">
-                              <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
+                              <a style="cursor:not-allowed;" href="" data-toggle="modal"  title="Compose"    class="btn btn-compose">
                                   Compose
                               </a>
                               <!-- Modal -->

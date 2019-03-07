@@ -60,16 +60,17 @@ a{
     color:rgb(121, 5, 5);
 }
 .user-head .user-name span a {
-    color: red;
+    color: #dd0202;
     font-size: 12px;
 }
 a.mail-dropdown {
     background: none repeat scroll 0 0 #80d3d9;
     border-radius: 2px;
-    color: #01a7b3;
+    color: #dd0202;
     font-size: 10px;
     margin-top: 20px;
     padding: 3px 5px;
+
 }
 .inbox-body {
     padding: 20px;
@@ -178,8 +179,8 @@ ul.labels-info li a i {
 }
 .inbox-head .sr-input {
     border: medium none;
-    border-radius: 20px;
-    box-shadow: 3px 3px 6px silver;
+    /* border-radius: 20px; */
+    box-shadow: 3px 3px 6px rgba(119, 8, 8, 0.685);
     color: #8a8a8a;
     float: left;
     height: 40px;
@@ -188,9 +189,9 @@ ul.labels-info li a i {
     border-bottom-right-radius: 0px
 }
 .inbox-head .sr-btn {
-    background: none repeat scroll 0 0 #ece6e9;
+    background: none repeat scroll 0 0 #dd0202;
     border: medium none;
-    box-shadow: 3px 3px 6px silver;
+    box-shadow: 3px 3px 6px rgba(119, 8, 8, 0.685);
     border-radius: 20px;
     color: #fff;
     height: 40px;

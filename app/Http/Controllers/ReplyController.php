@@ -49,16 +49,16 @@ class ReplyController extends Controller
             $message->replyTo($data['replyTo_address'], $data['replyTo_name']);
 
             $message->subject($data['subject']);
+            if(isset($data['a_file'])){
+                $message->attach($data['a_file']->getRealPath(),array(
 
-            $message->attach($data['a_file']->getRealPath(),array(
+                    'as' => 'a_file.'.$data['a_file']->getClientOriginalExtension(),
+                    'mime' => $data['a_file']->getMimeType()
+                    
+                    )
 
-                'as' => 'a_file.'.$data['a_file']->getClientOriginalExtension(),
-                'mime' => $data['a_file']->getMimeType()
-                
-                )
-
-            );
-
+                );
+            }
             
 
         });

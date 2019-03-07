@@ -25,7 +25,7 @@ class SendMailController extends Controller
             $message->from('blessingcodephp@gmail.com',"Blessing Ajala");
             $message->to($data['to']);
             $message->subject($data['subject']);
-            // if(!empty($attach)){
+            if(isset($data['a_file'])){
             $message->attach($data['a_file']->getRealPath(),array(
 
                 'as' => 'a_file.'.$data['a_file']->getClientOriginalExtension(),
@@ -34,7 +34,7 @@ class SendMailController extends Controller
             )
 
             );
-            // }
+            }
             
         });
         return redirect('/mail')->with('success','Mail Sent!');
