@@ -1,4 +1,5 @@
 {
+
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
@@ -7,8 +8,10 @@
         "laravel"
     ],
     "license": "MIT",
+   
     "require": {
         "php": "^7.1.3",
+        "dacastro4/laravel-gmail": "v0.6.1.1",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
@@ -42,11 +45,13 @@
             "database/seeds",
             "database/factories",
             "app/Imap.php",
-            "app/UnseenMessg.php"
+            "app/UnseenMessg.php",
+            "app/PhpImap/Mailbox.php"
         ],
         "files": [
             "app/Imap.php",
-            "app/UnseenMessg.php"
+            "app/UnseenMessg.php",
+            "app/PhpImap/Mailbox.php"
         ]
     },
     "autoload-dev": {

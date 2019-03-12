@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/temp.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hover.css')}}">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="{{asset('js/vue.js')}}"></script>
+    
+    <link href="{{asset('img/favicon.png')}}" rel="icon" type="icon">
     
 
 </head>
@@ -21,6 +23,7 @@
 <body>
 
     @yield('content')
-    
+    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/vue.js')}}"></script>
 </body>
 </html>

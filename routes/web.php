@@ -14,11 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/mail','MailController@index');
-// Route::get('/mail/list','MailController@show');
-Route::resource('mail/unseen','UnseenMessgController');
-Route::resource('mail','MailController');
-Route::post('/send/mail','SendMailController@index');
-Route::post('mail/reply/{inbox}','ReplyController@index');
-// Route::get('/sent','SentMessagesController@index');
-Route::get('/check','CheckController@index');
+
+// Mail Router
+Route::resource('mail','MailController'); //All Mail Messages
+
+Route::post('/send/mail','SendMailController@index'); //Send Mail
+Route::post('mail/reply/{inbox}','ReplyController@index'); //Reply Mail
+Route::get('/check','CheckController@index'); //Check for mail
+Route::get('/fetch','FetchInboxController@index'); //Fetch Mail2

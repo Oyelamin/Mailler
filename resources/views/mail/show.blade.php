@@ -11,15 +11,15 @@
                                   {{-- <img  width="64" hieght="60" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg"> --}}
                               </a>
                               <div class="user-name">
-                                  <h5><a href="#">Blessing Ajala</a></h5>
-                                  <span><a href="#">blessingcodephp@Gmail.com</a></span>
+                                <h5><a href="#">Admin Portal</a></h5>
+                                <span><a href="https://adminmail@Gmail.com">adminmail@Gmail.com</a></span>
                               </div>
                               <a class="mail-dropdown pull-right" href="javascript:;">
                                   <i style="color:red;" class="fa fa-chevron-down"></i>
                               </a>
                           </div>
                           <div class="inbox-body">
-                              <a style="cursor:not-allowed;" href="" data-toggle="modal"  title="Compose"    class="btn btn-compose">
+                              <a style="cursor:not-allowed;" href="" data-toggle="modal"  title="Compose"    class="hvr-bounce-to-right btn btn-compose">
                                   Compose
                               </a>
                               <!-- Modal -->
@@ -48,7 +48,7 @@
                                                             <span>Attachment</span>
                                                             {!! Form::file('a_file') !!}
                                                           </span>
-                                                          <button class="btn btn-send" type="submit">Send</button>
+                                                          <button onclick="this.form.submit();this.disabled = true;" class="btn btn-send" type="submit">Send</button>
                                                       </div>
                                                   </div>
                                               </form>

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Imap;
 use App\Inbox;
 use DB;
-use App\UnseenMessg;
 
 class MailController extends Controller
 {
@@ -14,42 +13,35 @@ class MailController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
-    
+
     
     public function index(Inbox $inbox)
     {
-       $email= new Imap();  //All Messages
-       $email2= new UnseenMessg();  //Unseen Messages
-       $inbox= null;
-       $inbox2= null;
-       //All Messages
-       $connection= $email->connect(
-        '{imap.gmail.com:993/imap/ssl}INBOX',   //Host Name
-        'blessingcodephp@gmail.com',    //Username
-        'Oyelamin'  //Password
-       );
-       //Unseen Messages
-       $connection2= $email2->connect(
+       
+        ini_set('max_execution_time','300');
 
-        '{imap.gmail.com:993/imap/ssl}INBOX',   //Host Name
-        'blessingcodephp@gmail.com',    //Username
-        'Oyelamin'  //Password
+        $email= new Imap();  //All Messages
+    
+        $inbox= null;
+        //All Messages
+        $connection= $email->connect(
 
-       );
-       //All Messages
-       if($connection){
-        
+            '{imap.gmail.com:993/imap/ssl}INBOX',   //Host Name
+            'blessingcodephp@gmail.com',    //Username
+            'Oyelamin'  //Password
+
+        );
+       
+        //All Messages
+        if($connection){
+            
             //Inbox Array
             $inboxs= $email->getMessages('html');
 
         }
-        if($connection2){
-        
-            //Inbox Array
-            $inboxs2= $email->getMessages('html');
 
-        }
         //All Messages
         foreach($inboxs['data'] as $inbox){
             
@@ -60,7 +52,7 @@ class MailController extends Controller
             $from_name= $inbox['from']['name'];
             $attachment= count($inbox['attachments']);
             
-            //Store all Messages
+            // Store all Messages
            Inbox::create([
 
                'subject' => $subject,
@@ -79,16 +71,9 @@ class MailController extends Controller
 
         }
 
-    // }
-        foreach($inboxs2['data'] as $inbox){               
-            $unseen_message= $inbox['message'];
-            $mess_inbox = DB::table('inboxes')->orderBy('id','desc')->groupBy('date')->paginate(30);
-            return view('mail.index')->with('mess_inbox',$mess_inbox)->with('unseen_message',$unseen_message);
+        $mess_inbox = DB::table('inboxes')->orderBy('id','desc')->groupBy('date')->paginate(30);
 
-        }
-    // $mess_inbox = DB::table('inboxes')->orderBy('id','desc')->groupBy('date')->paginate(30);
-    // return view('mail.index')->with('mess_inbox',$mess_inbox);
-
+        return view('mail.index')->with('mess_inbox',$mess_inbox);
     }
 
     /**
@@ -113,6 +98,7 @@ class MailController extends Controller
     }
 
     /**
+     * 
      * Display the specified resource.
      *
      * @param  \App\Mail  $mail
@@ -120,11 +106,15 @@ class MailController extends Controller
      */
     public function show(Inbox $inbox)
     {
+
         $url= $_SERVER['REQUEST_URI'];
+
         $id= trim($url,'/mail');
+
         $inbox= DB::table('inboxes')->where('id', $id)->first();
+
         return view('mail.show')->with('inbox',$inbox);
-           
+
     }
 
 
@@ -160,7 +150,10 @@ class MailController extends Controller
      */
     public function destroy(Inbox $inbox)
     {
+        
         $inbox->delete();
+
         return redirect('/mail');
+
     }
 }

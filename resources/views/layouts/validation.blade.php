@@ -1,24 +1,50 @@
 @if (count($errors) > 0)
-    <div style="margin-top:50px;" class="box notification is-danger">
+
+    <div id="verify" style="transition: right 4s ease-in;-webkit-transition: right 4s ease-in;-moz-transition: right 4s ease-in;margin-bottom:-20px;padding: 10px; margin-top:7px;width:50%;text-align:center;margin: auto;height:60px;" class="animated bounceInDown notification is-danger">
+
         @foreach ($errors->all() as $error)
-            <div>{{$error}}</div>
+
+            <div style="margin-top:20px;">
+            
+                {{$error}}
+            
+            </div>
+
         @endforeach
-    </div><br><br>
+
+    </div>
+    <br><br>
    
 @endif
 
 @if (session('success'))
-    <div style="margin-top:50px;" class="box notification is-success">
-        <div>{{session('success')}}</div>
-    </div><br><br>
 
-    
+    <div id="verify" style="transition: right 4s ease-in;-webkit-transition: right 4s ease-in;-moz-transition: right 4s ease-in;padding: 10px; margin-top:7px;width:50%;text-align:center;margin: auto;height:60px;" class="notification is-success animated bounceInDown">
+        
+        <div style="margin-top:20px;">
+        
+            {{session('success')}}
+        
+        </div>
+
+    </div>
+
+    <br><br>
+
 @endif
 
 @if (session('error'))
-    <div style="margin-top:50px;" class="box notification is-danger">
-        <div>{{session('error')}}</div>
-    </div><br><br>
 
+    <div id="verify" style="transition: right 4s ease-in;-webkit-transition: right 4s ease-in;-moz-transition: right 4s ease-in;padding: 10px; margin-top:7px;width:50%;text-align:center;margin: auto;height:60px;" class="notification is-danger animated bouceInDown">
+        
+        <div style="margin-top:20px;">
+        
+            {{session('error')}}
+        
+        </div>
+
+    </div>
     
+    <br><br>
+
 @endif

@@ -49,7 +49,9 @@ class ReplyController extends Controller
             $message->replyTo($data['replyTo_address'], $data['replyTo_name']);
 
             $message->subject($data['subject']);
+
             if(isset($data['a_file'])){
+
                 $message->attach($data['a_file']->getRealPath(),array(
 
                     'as' => 'a_file.'.$data['a_file']->getClientOriginalExtension(),
@@ -62,7 +64,8 @@ class ReplyController extends Controller
             
 
         });
-        return redirect('/mail');
+        
+        return redirect('/mail')->with('success','Sent!');
        
     }
 }

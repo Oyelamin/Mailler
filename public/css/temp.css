@@ -5,6 +5,10 @@
     table-layout: fixed;
     width: 100%;
 }
+body{
+    background: linear-gradient(to right,rgba(192, 192, 192, 0.548),rgba(248, 245, 245, 0.884));
+    height: 100%;
+}
 a{
     text-decoration: none;
 }
@@ -13,20 +17,29 @@ a{
     float: left;
     height: 100%;
     padding: 0;
-    
     vertical-align: top;
     
 }
 .mail-box .sm-side {
-    background: none repeat scroll 0 0 #ffffff;
-    border-radius: 4px 0 0 4px;
+    
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 5px 6px 6px 4px;
     width: 25%;
+    height: 600px;
+    /* box-shadow: 1px 20px 40px rgb(63, 6, 6); */
+    transition: .7s;
+    /* position: fixed; */
+    
 }
+
 .mail-box .lg-side {
     background: none repeat scroll 0 0 rgba(241, 232, 232, 0.158);
     border-radius: 0 4px 4px 0;
     width: 75%;
+    /* float: right; */
+    /* position: static; */
     
+
 }
 .mail-box .sm-side .user-head {
     background: none repeat scroll 0 0 #f8f8f8;
@@ -62,14 +75,17 @@ a{
 .user-head .user-name span a {
     color: #dd0202;
     font-size: 12px;
+    
 }
 a.mail-dropdown {
-    background: none repeat scroll 0 0 #80d3d9;
+    background: none repeat scroll 0 0 rgba(3, 3, 77, 0.151);
     border-radius: 2px;
     color: #dd0202;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 20px;
     padding: 3px 5px;
+    width:22px;
+    font-weight:bold;
 
 }
 .inbox-body {
@@ -81,7 +97,7 @@ a.mail-dropdown {
     padding: 12px 0;
     text-align: center;
     width: 100%;
-    box-shadow: 0px 3px 12px 12px silver;
+    box-shadow: 0px 1px 1px 1px rgba(92, 28, 28, 0.144);
     transition: .5s;
     font-weight: bold;
 }
@@ -95,6 +111,7 @@ ul.inbox-nav {
     margin: 0;
     padding: 0;
     width: 100%;
+    color: rgb(233, 233, 233);
 }
 .inbox-divider {
     border-bottom: 1px solid #d5d8df;
@@ -116,13 +133,13 @@ ul.inbox-nav li a {
 }
 ul.inbox-nav li a:hover{
     width: 90%;
-    transition: .8s;
+    transition: .3s;
     text-decoration: none;
 }
 ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
-    background: none repeat scroll 0 0 pink;
-    color: #6a6a6a;
-    border-radius: 30px;
+    background: none repeat scroll 0 0 rgb(209, 50, 77);
+    color: #fff;
+    border-radius: 10px;
     /* box-shadow: 3px 1px 1px 1px silver; */
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;

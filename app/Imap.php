@@ -39,7 +39,7 @@ class Imap {
         $this->imapStream = $connection;
         return true;
     }
-    
+
     public function getMessages($type = 'text') {
         $this->attachments_dir = rtrim($this->attachments_dir, '/');
         $stream = $this->imapStream;
