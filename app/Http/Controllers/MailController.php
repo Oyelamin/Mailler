@@ -15,18 +15,17 @@ class MailController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-
     
     public function index(Inbox $inbox)
     {
-       
+
         ini_set('max_execution_time','300');
 
         $mess_inbox = DB::table('inboxes')->orderBy('id','desc')->groupBy('date')->paginate(30);
 
         return view('mail.index')->with('mess_inbox',$mess_inbox);
-    }
 
+    }
     
     /**
      * Show the form for creating a new resource.
